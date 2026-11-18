@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#07060b">
+  <title>SALVA LA NAVIDANCE · BRUTAL.</title>
+  <meta name="description" content="Elegí tu DJ, vencé a Robo-Grinch y salvá la Navidance de 9 de Julio en el menor tiempo. Ranking de la fiesta BRUTAL.">
+  <!-- favicon: la B-Coin en 8-bit (generada con tools/assets_v2.py) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png?v=2">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png?v=2">
+  <link rel="shortcut icon" href="favicon.ico?v=2">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
+  <link rel="manifest" href="manifest.webmanifest">
+  <!-- Vista previa al compartir el link (WhatsApp, Instagram, etc.). server.js reemplaza %ORIGIN% por la dirección real. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SALVA LA NAVIDANCE · BRUTAL.">
+  <meta property="og:description" content="Elegí tu DJ, vencé a Robo-Grinch y salvá la Navidance de 9 de Julio en el menor tiempo. ¿Entrás al Top 3?">
+  <meta property="og:image" content="%ORIGIN%/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/akira8.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <!-- Logo animado del menú: VIDEO real en calidad completa, en loop, sin sonido y sin controles.
+       Tiene fondo negro: con mix-blend-mode "screen" el negro desaparece y queda solo el logo. -->
+  <video id="menuVideo" src="assets/video/menu_logo.mp4" muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback aria-hidden="true"></video>
+
+  <!-- REGISTRO: nombre + usuario de Instagram -->
+  <div id="reg" class="overlay hidden">
+    <div class="box">
+      <div class="coin"></div>
+      <h1>SALVA LA<br><span>NAVIDANCE</span></h1>
+      <p class="lead">Terminá el nivel en el menor tiempo y entrá al ranking.</p>
+      <label for="regName">TU NOMBRE</label>
+      <input id="regName" maxlength="16" autocomplete="nickname" spellcheck="false" placeholder="NOMBRE">
+      <label for="regIg">USUARIO DE INSTAGRAM</label>
+      <div class="ig"><span>@</span><input id="regIg" maxlength="30" autocapitalize="none" autocorrect="off" autocomplete="off" spellcheck="false" placeholder="usuario"></div>
+      <label class="chk"><input type="checkbox" id="regOk"><i></i><span>Acepto que BRUTAL. me contacte por Instagram si quedo entre los mejores del ranking.</span></label>
+      <div id="regErr"></div>
+      <button id="regGo" class="btn red">CONTINUAR ▶</button>
+      <button id="regBack" class="btn">VOLVER</button>
+      <p class="tiny">Tu nombre, tu usuario de Instagram, tu personaje y tu tiempo se muestran en el ranking público. Cada Instagram figura una sola vez, con su mejor tiempo.</p>
+    </div>
+  </div>
+
+  <div id="rotate">
+    <div class="coin"></div>
+    <p>GIRÁ EL TELÉFONO</p>
+    <small>SALVA LA NAVIDANCE SE JUEGA EN HORIZONTAL</small>
+  </div>
+
+  <!-- Scripts (sin módulos: también funciona abriendo el archivo directo) -->
+  <script src="js/data/font-data.js"></script>
+  <script src="js/data/art-data.js"></script>
+  <script src="js/data/music-data.js"></script>
+  <script src="js/data/sprites-data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/gfx.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/level.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/enemies.js"></script>
+  <script src="js/stage.js"></script>
+  <script src="js/hud.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

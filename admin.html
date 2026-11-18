@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>ADMIN · RANKING SALVA LA NAVIDANCE</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png?v=2">
+  <style>
+    @font-face { font-family: 'Akira8'; src: url(assets/fonts/akira8.ttf) format('truetype'); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #07060b; color: #dfe6f5; font-family: 'Akira8', monospace; font-size: 11px; padding: 16px; }
+    h1 { font-size: 33px; color: #f5c542; text-shadow: 3px 3px 0 #5c0815; font-weight: normal; margin-bottom: 4px; }
+    .sub { color: #8ea2c4; margin-bottom: 16px; }
+    .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+    input, button, a.btn { font-family: inherit; font-size: 22px; padding: 6px 12px; background: #10101e; color: #fff; border: 0; box-shadow: inset 0 0 0 3px #3a4466; text-decoration: none; }
+    button, a.btn { cursor: pointer; } button.red { background: #b3132b; box-shadow: inset 0 0 0 3px #fff; }
+    .top3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .card { background: #0b0a16; padding: 14px; box-shadow: 0 0 0 3px #0b0a12, 0 0 0 6px var(--c); }
+    .card .pos { font-size: 44px; color: var(--c); } .card .name { font-size: 22px; color: #fff; margin: 4px 0; } .card a { color: #f5c542; font-size: 22px; }
+    .card .time { font-size: 22px; color: #fff; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; background: #0b0a16; }
+    th { text-align: left; color: #f5c542; padding: 8px; border-bottom: 3px solid #b3132b; font-weight: normal; }
+    td { padding: 7px 8px; border-bottom: 1px solid #1d2238; font-size: 11px; } tr:nth-child(even) td { background: #0e0d1c; }
+    td.t { font-size: 22px; color: #fff; } td a { color: #f5c542; }
+    .h-ivan { color: #ff2e4a; } .h-hades { color: #4d8dff; } .h-matias { color: #33e07a; }
+    #msg { color: #ff2e4a; min-height: 14px; margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>RANKING · ADMIN</h1>
+  <div class="sub">SALVA LA NAVIDANCE · Mejor tiempo de cada jugador · se actualiza solo cada 15 segundos</div>
+  <div class="bar">
+    <input id="key" type="password" placeholder="CLAVE ADMIN">
+    <button class="red" id="go">VER</button>
+    <a class="btn" id="csv" href="#">DESCARGAR CSV</a>
+    <input id="freeIg" placeholder="@INSTAGRAM">
+    <button id="free">LIBERAR</button>
+    <span id="stats"></span>
+  </div>
+  <div id="msg"></div>
+  <div class="top3" id="top3"></div>
+  <table><thead><tr><th>#</th><th>NOMBRE</th><th>INSTAGRAM</th><th>DJ</th><th>TIEMPO</th><th>B-COINS</th><th>CAÍDAS</th><th>PARTIDAS</th><th>FECHA</th></tr></thead><tbody id="rows"></tbody></table>
+  <script src="js/admin.js"></script>
+</body>
+</html>
